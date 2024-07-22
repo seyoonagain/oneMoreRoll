@@ -75,18 +75,20 @@ export default function ProductDetail() {
                 />
                 <div className='self-end w-full md:w-1/2'>
                     <div className='md:text-right md:absolute top-0 right-0 md:w-1/2 md:pl-4 w-full'>
-                        <button
-                            onClick={handleLike}
-                            className='cursor-pointer hover:scale-110'
-                        >
-                            <LikeButton
+                        {uid && (
+                            <button
                                 onClick={handleLike}
-                                like={
-                                    wishlist &&
-                                    wishlist.some((item) => item.id === id)
-                                }
-                            />
-                        </button>
+                                className='cursor-pointer hover:scale-110'
+                            >
+                                <LikeButton
+                                    onClick={handleLike}
+                                    like={
+                                        wishlist &&
+                                        wishlist.some((item) => item.id === id)
+                                    }
+                                />
+                            </button>
+                        )}
                         <h2 className='font-bold text-3xl'>{title}</h2>
                         <p className='border-b border-zinc-600 pb-2'>
                             {description}
