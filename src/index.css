@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100vw;
+    height: 100vh;
+    @apply flex flex-col items-center;
+    @apply bg-gray-100 text-zinc-950 dark:bg-zinc-950 dark:text-gray-100;
+    @apply selection:bg-brand selection:text-gray-50;
+    @apply transition-all;
+    @apply font-Pretendard;
+}
+
+#root {
+    @apply w-full;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+input {
+    @apply outline-none p-2 bg-transparent border-b border-zinc-500 placeholder:italic;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+    opacity: 1;
+}
