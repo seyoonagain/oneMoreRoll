@@ -7,6 +7,9 @@ import useWishlist from '../Hooks/useWishlist';
 import useProducts from '../Hooks/useProducts';
 import LoadingSpinner from '../Components/ui/LoadingSpinner';
 
+const QTY_ICON_CLASS =
+    'size-10 shrink-0 flex justify-center items-center font-Tiny5 text-lg hover:text-2xl';
+
 export default function ProductDetail() {
     const { uid } = useAuthContext();
     const { id: productId } = useParams();
@@ -42,6 +45,7 @@ export default function ProductDetail() {
             onSuccess: () => {
                 setSuccess('Added to Cart!');
                 setTimeout(() => setSuccess(null), 2000);
+                setQty(1);
             },
         });
     };
@@ -58,6 +62,16 @@ export default function ProductDetail() {
             addWishItem.mutate(product);
         } else {
             removeWishItem.mutate(id);
+        }
+    };
+    const handleMore = () => {
+        if (qty < 100) {
+            setQty(qty + 1);
+        }
+    };
+    const handleLess = () => {
+        if (qty > 1) {
+            setQty(qty - 1);
         }
     };
 
@@ -118,22 +132,27 @@ export default function ProductDetail() {
                                 </select>
                             </div>
                             <div className='flex justify-between items-center'>
-                                <div>
-                                    <label
-                                        className='font-medium text-sm mr-2'
-                                        htmlFor='qty'
-                                    >
+                                <div className='flex items-center'>
+                                    <span className='font-medium text-sm mr-2'>
                                         Qty:{' '}
-                                    </label>
-                                    <input
-                                        className='font-semibold bg-gray-200 dark:bg-zinc-800 h-10 border-none text-center'
-                                        id='qty'
-                                        type='number'
-                                        min='1'
-                                        max='99'
-                                        value={qty}
-                                        onChange={(e) => setQty(e.target.value)}
-                                    />
+                                    </span>
+                                    <div className='flex items-center w-fit px-2 gap-3 bg-gray-200 dark:bg-zinc-800 '>
+                                        <button
+                                            onClick={handleLess}
+                                            className={QTY_ICON_CLASS}
+                                        >
+                                            -
+                                        </button>
+                                        <p className='w-3 shrink-0 flex justify-center sm:text-base font-semibold'>
+                                            {qty}
+                                        </p>
+                                        <button
+                                            onClick={handleMore}
+                                            className={QTY_ICON_CLASS}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
                                 </div>
                                 <div className='my-5 font-semibold text-lg'>
                                     Total:{'\xa0\xa0'}
@@ -148,7 +167,7 @@ export default function ProductDetail() {
                                     success
                                         ? 'bg-sun dark:bg-moon text-zinc-950'
                                         : 'bg-zinc-800 dark:bg-gray-100 hover:bg-brand text-gray-50 dark:text-zinc-800 dark:hover:text-gray-50 '
-                                } font-Silkscreen px-2 h-6`}
+                                } font-Silkscreen px-2 h-10`}
                                 disabled={success}
                             >
                                 {success ? success : 'Add To Cart'}

@@ -35,16 +35,16 @@ export default function NavBar() {
                     </div>
                 </div>
                 <div className='flex items-end justify-between pb-3 tracking-tight'>
-                    <Link to='/' className='flex flex-col md:items-center'>
-                        <h1 className='cursor-pointer font-Tiny5 font-bold text-4xl md:text-5xl text-brand tracking-tighter leading-7 md:leading-none mb-1 active:brightness-125'>
-                            one <br className='md:hidden' />
+                    <Link to='/' className='flex flex-col sm:items-center'>
+                        <h1 className='cursor-pointer font-Tiny5 font-bold text-4xl sm:text-5xl text-brand tracking-tighter leading-7 sm:leading-none mb-1 active:brightness-125'>
+                            one <br className='sm:hidden' />
                             more
-                            <br className='md:hidden' /> roll
+                            <br className='sm:hidden' /> roll
                         </h1>
-                        <p className='font-Silkscreen hidden md:block leading-4'>
+                        <p className='font-Silkscreen hidden sm:block leading-4'>
                             film photography
                         </p>
-                        <p className='font-Silkscreen text-sm md:hidden leading-3'>
+                        <p className='font-Silkscreen text-sm sm:hidden leading-3'>
                             film
                             <br /> photo
                         </p>

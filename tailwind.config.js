@@ -19,6 +19,9 @@ module.exports = {
       aspectRatio: {
         '3/4': '3 / 4',
       },
+      maxWidth: {
+        'footer': '60rem',
+      }
     },
     fontFamily: {
       Silkscreen: ['Silkscreen'],

@@ -54,7 +54,7 @@ export default function CartItem({
                         <button onClick={handleLess} className={QTY_ICON_CLASS}>
                             -
                         </button>
-                        <p className='w-3 shrink-0 flex justify-center text-sm sm:text-base font-semibold'>
+                        <p className='w-3 shrink-0 flex justify-center sm:text-base font-semibold'>
                             {quantity}
                         </p>
                         <button onClick={handleMore} className={QTY_ICON_CLASS}>

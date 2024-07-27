@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProductCard from './ProductCard';
 import LoadingSpinner from './ui/LoadingSpinner';
 import useProducts from '../Hooks/useProducts';
+import ErrorMessage from './ErrorMessage';
 
 export default function Products({ category }) {
     const {
@@ -33,35 +34,40 @@ export default function Products({ category }) {
                 </p>
             )}
             {category && products && products.length > 0 && (
-                <div className='my-5 flex justify-center gap-5 cursor-pointer font-medium text-xl tracking-tight'>
-                    <button
-                        onClick={handleCategory}
-                        className={`hover:scale-110 ${
-                            selectedCategory === 'all' &&
-                            'text-sun dark:text-moon font-bold'
-                        }`}
-                        value='all'
-                    >
-                        All
-                    </button>
-                    {categories.map((category) => (
+                <>
+                    <div className='my-5 flex justify-center cursor-pointer font-semibold text-xl tracking-tight'>
+                        Films
+                    </div>
+                    <div className='my-5 flex justify-center gap-5 cursor-pointer font-medium text-base tracking-tight'>
                         <button
-                            key={category}
                             onClick={handleCategory}
                             className={`hover:scale-110 ${
-                                selectedCategory === category &&
+                                selectedCategory === 'all' &&
                                 'text-sun dark:text-moon font-bold'
                             }`}
-                            value={category}
+                            value='all'
                         >
-                            {category}
+                            All
                         </button>
-                    ))}
-                </div>
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={handleCategory}
+                                className={`hover:scale-110 ${
+                                    selectedCategory === category &&
+                                    'text-sun dark:text-moon font-bold'
+                                }`}
+                                value={category}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                </>
             )}
             {isLoading && <LoadingSpinner />}
             {error ? (
-                <p>error!</p>
+                <ErrorMessage />
             ) : (
                 <ul
                     className={`mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ${

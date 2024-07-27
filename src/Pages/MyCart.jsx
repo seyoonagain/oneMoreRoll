@@ -10,12 +10,22 @@ const SHIPPING = 5;
 export default function MyCart() {
     const {
         cartQuery: { isLoading, data: products },
+        removeItem,
     } = useCart();
     const hasProducts = products && products.length > 0;
     const totalPrice =
         products && products.reduce((a, b) => a + b.price * b.qty, 0);
     const finalShipping =
         totalPrice >= 100 || (products && products.length) === 0 ? 0 : SHIPPING;
+    const handleOrder = (e) => {
+        if (!hasProducts) {
+            alert('Nothing in the cart!');
+        } else {
+            alert('Your order has been placed.');
+            products &&
+                products.map((product) => removeItem.mutate(product.id));
+        }
+    };
     return (
         <section className='flex flex-col px-5'>
             {isLoading && <LoadingSpinner />}
@@ -42,7 +52,7 @@ export default function MyCart() {
                 <PriceCard text='Total' price={totalPrice + finalShipping} />
             </div>
 
-            <Button text='Order' />
+            <Button text='Order' onClick={handleOrder} />
         </section>
     );
 }
