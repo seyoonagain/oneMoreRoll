@@ -66,7 +66,7 @@ export default function NavBar() {
                         )}
                         {user && (
                             <Link to='/cart'>
-                                <CartStatus />
+                                <Button icon={<CartStatus />} />
                             </Link>
                         )}
                     </nav>
