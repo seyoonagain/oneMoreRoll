@@ -8,10 +8,12 @@ import CartStatus from './CartStatus';
 import { PiPencilSimpleLine } from 'react-icons/pi';
 import { IoSunnySharp, IoMoonSharp } from 'react-icons/io5';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { useLanguageContext } from '../Contexts/LanguageContext';
 
 export default function NavBar() {
     const { user, uid, login, logout } = useAuthContext();
     const { darkMode, toggleDarkMode } = useDarkMode();
+    const { engMode } = useLanguageContext();
     return (
         <header className='border-b border-zinc-900 dark:border-gray-50 sticky top-0 pt-2 bg-gray-100 text-zinc-950 dark:bg-zinc-950 dark:text-gray-50 z-50'>
             <div className='px-5'>
@@ -30,7 +32,15 @@ export default function NavBar() {
                         {user && <User user={user} />}
                         <Button
                             onClick={!user ? login : logout}
-                            text={!user ? 'Login' : 'Logout'}
+                            text={
+                                !user
+                                    ? engMode
+                                        ? 'Login'
+                                        : '로그인'
+                                    : engMode
+                                    ? 'Logout'
+                                    : '로그아웃'
+                            }
                         />
                     </div>
                 </div>
@@ -52,7 +62,7 @@ export default function NavBar() {
 
                     <nav className='flex items-center gap-4'>
                         <Link to='/products'>
-                            <Button text='Films' />
+                            <Button text={engMode ? 'Films' : '필름'} />
                         </Link>
                         {user && user.isAdmin && (
                             <Link to='/products/new'>

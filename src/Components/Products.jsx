@@ -3,25 +3,34 @@ import ProductCard from './ProductCard';
 import LoadingSpinner from './ui/LoadingSpinner';
 import useProducts from '../Hooks/useProducts';
 import ErrorMessage from './ErrorMessage';
+import { useLanguageContext } from '../Contexts/LanguageContext';
 
 export default function Products({ category }) {
+    const { engMode } = useLanguageContext();
     const {
         productsQuery: { isLoading, error, data: products },
     } = useProducts();
     const [films, setFilms] = useState(products && products);
     const [selectedCategory, setSelectedCategory] = useState(
-        category ? 'all' : null
+        category ? (engMode ? 'all' : '전체보기') : null
     );
     const categories = Array.from(
-        new Set(products && products.map((product) => product.category))
+        new Set(
+            products &&
+                products.map((product) =>
+                    engMode ? product.category : product.KRcategory
+                )
+        )
     );
     const handleCategory = (e) => {
         setSelectedCategory(e.target.value);
-        e.target.value === 'all'
+        e.target.value === (engMode ? 'All' : '전체보기')
             ? setFilms(products)
             : setFilms(
                   products.filter(
-                      (product) => product.category === e.target.value
+                      (product) =>
+                          (engMode ? product.category : product.KRcategory) ===
+                          e.target.value
                   )
               );
     };
@@ -30,24 +39,27 @@ export default function Products({ category }) {
         <section className='px-5'>
             {products && products.length === 0 && (
                 <p className='flex justify-center items-center h-60 text-xl font-bold text-sun dark:text-moon'>
-                    No Rolls Available
+                    {engMode
+                        ? 'No Rolls Available'
+                        : '상품이 존재하지 않습니다.'}
                 </p>
             )}
             {category && products && products.length > 0 && (
                 <>
                     <div className='my-5 flex justify-center cursor-pointer font-semibold text-xl tracking-tight'>
-                        Films
+                        {engMode ? 'Films' : '필름'}
                     </div>
                     <div className='my-5 flex justify-center gap-5 cursor-pointer font-medium text-base tracking-tight'>
                         <button
                             onClick={handleCategory}
                             className={`hover:scale-110 ${
-                                selectedCategory === 'all' &&
+                                selectedCategory ===
+                                    (engMode ? 'All' : '전체보기') &&
                                 'text-sun dark:text-moon font-bold'
                             }`}
-                            value='all'
+                            value={engMode ? 'All' : '전체보기'}
                         >
-                            All
+                            {engMode ? 'All' : '전체보기'}
                         </button>
                         {categories.map((category) => (
                             <button

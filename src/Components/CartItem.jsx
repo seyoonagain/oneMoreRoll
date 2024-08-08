@@ -1,17 +1,33 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCart from '../Hooks/useCart';
+import { useLanguageContext } from '../Contexts/LanguageContext';
 
 const QTY_ICON_CLASS =
     'size-3 shrink-0 flex justify-center items-center font-Tiny5 text-lg hover:text-2xl';
 
 export default function CartItem({
     product,
-    product: { id, image, option, price, qty, title },
+    product: {
+        id,
+        image,
+        qty,
+        title,
+        price,
+        KRtitle,
+        KRprice,
+        options,
+        KRoptions,
+        optionIndex,
+    },
 }) {
+    const { engMode, currencySymbol } = useLanguageContext();
     const [quantity, setQuantity] = useState(qty);
     const { updateItem, removeItem } = useCart();
-
+    const displayedTitle = product && (engMode ? title : KRtitle);
+    const displayedPrice = product && (engMode ? price : KRprice);
+    const displayedOption =
+        product && (engMode ? options[optionIndex] : KRoptions[optionIndex]);
     const handleMore = () => {
         if (quantity < 100) {
             updateItem.mutate({ ...product, qty: parseInt(quantity) + 1 });
@@ -25,7 +41,6 @@ export default function CartItem({
         }
     };
     const handleDelete = () => removeItem.mutate(id);
-
     return (
         <li className='border-b border-zinc-500 dark:border-gray-200 flex flex-col sm:flex-row sm:justify-center items-center px-3 py-5 relative'>
             <Link
@@ -38,19 +53,20 @@ export default function CartItem({
                 <div>
                     <Link to={`/products/${id}`}>
                         <p className='text sm:text-xl font-bold cursor-pointer leading-5'>
-                            {title}
+                            {displayedTitle}
                         </p>
                     </Link>
 
                     <div className='text-sm opacity-70'>
                         option:{'\xa0\xa0'}
-                        <span className='font-semibold'>{option}</span>
+                        <span className='font-semibold'>{displayedOption}</span>
                     </div>
                     <p className='my-2 text-sm sm:text-base font-semibold'>
-                        ${price}
+                        {currencySymbol}
+                        {displayedPrice.toLocaleString()}
                     </p>
 
-                    <div className='flex items-center text-sm w-fit h-5 px-2 gap-3 rounded-full bg-brand text-white '>
+                    <div className='flex items-center text-sm w-fit h-5 px-2 gap-3 bg-brand text-white '>
                         <button onClick={handleLess} className={QTY_ICON_CLASS}>
                             -
                         </button>
@@ -64,9 +80,10 @@ export default function CartItem({
                 </div>
                 <div>
                     <div className='flex flex-col items-center mt-2 mr-5 text-sm'>
-                        Subtotal
+                        {engMode ? 'Subtotal' : '합계'}
                         <span className='font-bold text-base sm:text-lg'>
-                            ${price * qty}
+                            {currencySymbol}
+                            {(displayedPrice * qty).toLocaleString()}
                         </span>
                     </div>
                     <button

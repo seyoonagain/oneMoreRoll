@@ -13,6 +13,7 @@ import ProductDetail from './Pages/ProductDetail';
 import DarkModeProvider from './Contexts/DarkModeContext';
 import ProtectedRoute from './Pages/ProtectedRoute';
 import Wishlist from './Pages/Wishlist';
+import LanguageContextProvider from './Contexts/LanguageContext';
 
 const router = createBrowserRouter([
   {
@@ -50,9 +51,11 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DarkModeProvider>
-      <RouterProvider router={router} />
-    </DarkModeProvider>
+    <LanguageContextProvider>
+      <DarkModeProvider>
+        <RouterProvider router={router} />
+      </DarkModeProvider>
+    </LanguageContextProvider>
   </React.StrictMode>
 );
 

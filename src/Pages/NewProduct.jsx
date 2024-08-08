@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import uploadImage from '../API/uploader.js';
 import useProducts from '../Hooks/useProducts.jsx';
+import { useLanguageContext } from '../Contexts/LanguageContext.jsx';
 
 export default function NewProduct() {
+    const { engMode } = useLanguageContext();
     const { addProduct } = useProducts();
     const [product, setProduct] = useState({});
     const [imgFile, setImgFile] = useState();
@@ -47,8 +49,12 @@ export default function NewProduct() {
 
     return (
         <section className='w-full text-center text-sm tracking-tight'>
-            <h2 className='font-Silkscreen text-3xl tracking-tighter my-5'>
-                New Film Registration
+            <h2
+                className={`${
+                    engMode ? 'font-Silkscreen' : 'font-Galmuri9'
+                } text-2xl sm:text-3xl tracking-tighter my-5`}
+            >
+                {engMode ? 'New Film Registration' : '새로운 필름 등록'}
             </h2>
             <p className='dark:text-moon text-sun mb-5 text-lg font-Silkscreen font-bold h-3 flex items-center justify-center'>
                 {success && success}
@@ -79,11 +85,29 @@ export default function NewProduct() {
                     onChange={handleChange}
                 />
                 <input
+                    type='text'
+                    placeholder='상품명'
+                    name='KRtitle'
+                    value={product.KRtitle ?? ''}
+                    required
+                    onChange={handleChange}
+                />
+                <input
                     type='number'
                     placeholder='Price'
                     name='price'
                     value={product.price ?? ''}
                     required
+                    min='0'
+                    onChange={handleChange}
+                />
+                <input
+                    type='number'
+                    placeholder='가격'
+                    name='KRprice'
+                    value={product.KRprice ?? ''}
+                    required
+                    min='0'
                     onChange={handleChange}
                 />
                 <input
@@ -91,6 +115,14 @@ export default function NewProduct() {
                     placeholder='Category'
                     name='category'
                     value={product.category ?? ''}
+                    required
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
+                    placeholder='카테고리'
+                    name='KRcategory'
+                    value={product.KRcategory ?? ''}
                     required
                     onChange={handleChange}
                 />
@@ -104,17 +136,35 @@ export default function NewProduct() {
                 />
                 <input
                     type='text'
+                    placeholder='상품 설명'
+                    name='KRdescription'
+                    value={product.KRdescription ?? ''}
+                    required
+                    onChange={handleChange}
+                />
+                <input
+                    type='text'
                     placeholder='Option1, Option2, Option3, ...'
                     name='options'
                     value={product.options ?? ''}
                     onChange={handleChange}
                 />
+                <input
+                    type='text'
+                    placeholder='옵션1, 옵션2, 옵션3, ...'
+                    name='KRoptions'
+                    value={product.KRoptions ?? ''}
+                    onChange={handleChange}
+                />
                 <button
                     type='submit'
-                    className='mt-3 font-bold font-Silkscreen text-xl tracking-tighter outline-none hover:text-brand active:brightness-150'
+                    className={`${
+                        engMode ? 'font-Silkscreen' : 'font-Galmuri14'
+                    } mt-3 font-bold text-xl tracking-tighter outline-none hover:text-brand active:brightness-150`}
                     disabled={isUploading}
                 >
-                    {isUploading ? 'Uploading...' : 'Register'}
+                    {engMode && (isUploading ? 'Uploading...' : 'Register')}
+                    {!engMode && (isUploading ? '업로드 중...' : '등록')}
                 </button>
             </form>
         </section>

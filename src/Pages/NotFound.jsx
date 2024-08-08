@@ -2,14 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdArrowBackIos } from 'react-icons/md';
 import ErrorMessage from '../Components/ErrorMessage';
+import { useLanguageContext } from '../Contexts/LanguageContext';
 
 export default function NotFound() {
+    const { engMode } = useLanguageContext();
     return (
         <div className='p-5 tracking-tight'>
             <Link to='/'>
-                <button className='flex p-2 px-4 items-center font-Silkscreen bg-brand text-white rounded-full hover:brightness-105'>
+                <button
+                    className={`${
+                        engMode ? 'font-Silkscreen' : 'font-Galmuri9'
+                    } flex p-2 px-4 items-center bg-brand text-white rounded-full hover:brightness-105`}
+                >
                     <MdArrowBackIos />
-                    {'\xa0'}Go to Main Page
+                    {'\xa0'} {engMode ? 'Go to Main Page' : '메인으로 돌아가기'}
                 </button>
             </Link>
             <ErrorMessage />

@@ -5,16 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: '#0952ed',
-        sun: '#fc4903',
-        moon: '#ede351'
+        'brand': '#0952ed',
+        'sun': '#fc4903',
+        'moon': '#ede351'
       },
       dropShadow: {
-        title: '4px 4px 0 rgb(33, 33, 33, 0.9)',
-        smTitle: '3px 3px 0 rgb(33, 33, 33, 0.9)',
-      },
-      aspectRatio: {
-        '4/3': '4 / 3',
+        'title': '3px 3px 0 rgb(33, 33, 33, 0.9)',
       },
       maxWidth: {
         'footer': '60rem',
@@ -35,9 +31,13 @@ module.exports = {
       },
     },
     fontFamily: {
-      Silkscreen: ['Silkscreen'],
-      Tiny5: ['Tiny5'],
-      Pretendard: ['Pretendard']
+      'Silkscreen': ['Silkscreen'],
+      'Tiny5': ['Tiny5'],
+      'Pretendard': ['Pretendard'],
+      'Galmuri7': ['Galmuri7'],
+      'Galmuri9': ['Galmuri9'],
+      'Galmuri11': ['Galmuri11'],
+      'Galmuri14': ['Galmuri14']
     }
   },
   plugins: [],

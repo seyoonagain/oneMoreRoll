@@ -10356,6 +10356,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-icons: "npm:^5.2.1"
+    react-native-localize: "npm:^3.2.1"
     react-router-dom: "npm:^6.25.1"
     react-scripts: "npm:5.0.1"
     tailwindcss: "npm:^3.4.6"
@@ -11834,6 +11835,20 @@ __metadata:
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
   checksum: 10c0/f2f1e60010c683479e74c63f96b09fb41603527cd131a9959e2aee1e5a8b0caf270b365e5ca77d4a6b18aae659b60a86150bb3979073528877029b35aecd2072
+  languageName: node
+  linkType: hard
+
+"react-native-localize@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "react-native-localize@npm:3.2.1"
+  peerDependencies:
+    react: ">=18.1.0"
+    react-native: ">=0.70.0"
+    react-native-macos: ">=0.70.0"
+  peerDependenciesMeta:
+    react-native-macos:
+      optional: true
+  checksum: 10c0/75785a5d24d4e34b7cd4ac48c300bb0a8abd279b056480268bb8df4860511bee741d870f1e7d4725cd0c82de8984b2c044c69edf356ae83b8af84a438537ea7a
   languageName: node
   linkType: hard
 

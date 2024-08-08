@@ -22,13 +22,13 @@ export default function Banner() {
                     className='bg-cover w-full opacity-70'
                 />
             </div>
-            <div className='absolute w-full top-1/3 text-center text-white tracking-tighter opacity-95'>
-                <h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-Tiny5 font-bold leading-7 drop-shadow-smTitle sm:drop-shadow-title'>
+            <div className='absolute w-full top-1/3 text-center text-white tracking-tighter opacity-100'>
+                <h2 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-Tiny5 font-bold leading-7 drop-shadow-title sm:drop-shadow-title'>
                     Take <br className='sm:hidden' />
                     One More Roll
                 </h2>
-                <p className='text-base sm:text-xl md:text-2xl lg:text-3xl font-Silkscreen font-bold opacity-80'>
-                    Keep the Moment
+                <p className='text-base sm:text-xl md:text-2xl lg:text-3xl font-Silkscreen font-bold opacity-90'>
+                    Capture the Moment
                 </p>
             </div>
         </section>
