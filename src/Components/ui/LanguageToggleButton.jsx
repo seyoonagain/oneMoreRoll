@@ -7,7 +7,7 @@ const TOGGLE_BUTTON_STYLE =
 export default function LanguageToggleButton() {
     const { engMode, toggleLanguage } = useLanguageContext();
     return (
-        <div className='mb-7 bg-gray-200 dark:bg-zinc-800 w-18 h-4 flex justify-between items-center'>
+        <div className='bg-gray-200 dark:bg-zinc-800 w-18 h-4 flex justify-between items-center'>
             <button
                 className={`${
                     engMode ? 'text-white bg-brand' : 'opacity-40'
