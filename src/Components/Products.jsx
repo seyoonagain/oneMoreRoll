@@ -12,7 +12,7 @@ export default function Products({ category }) {
     } = useProducts();
     const [films, setFilms] = useState(products && products);
     const [selectedCategory, setSelectedCategory] = useState(
-        category ? (engMode ? 'all' : '전체보기') : null
+        category && (engMode ? 'All' : '전체보기')
     );
     const categories = Array.from(
         new Set(
@@ -34,7 +34,6 @@ export default function Products({ category }) {
                   )
               );
     };
-
     return (
         <section className='px-5'>
             {products && products.length === 0 && (
@@ -53,8 +52,8 @@ export default function Products({ category }) {
                         <button
                             onClick={handleCategory}
                             className={`hover:scale-110 ${
-                                selectedCategory ===
-                                    (engMode ? 'All' : '전체보기') &&
+                                (selectedCategory === 'All' ||
+                                    selectedCategory === '전체보기') &&
                                 'text-sun dark:text-moon font-bold'
                             }`}
                             value={engMode ? 'All' : '전체보기'}

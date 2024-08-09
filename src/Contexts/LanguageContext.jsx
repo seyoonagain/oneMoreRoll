@@ -8,7 +8,6 @@ export default function LanguageContextProvider({ children }) {
     const [{ languageCode }] = getLocales();
     const [currencySymbol, setCurrencySymbol] = useState('$');
     const toggleLanguage = () => {
-        localStorage.removeItem('language');
         setEngMode(!engMode);
         updateLanguageMode(!engMode);
         setCurrencySymbol(!engMode ? '$' : '₩');
