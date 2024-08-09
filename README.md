@@ -48,8 +48,8 @@
 
 <h4 align='center'> Light Mode & Dark Mode / 라이트 모드 & 다크모드 </h4>
 <div align='center' style='display: inline'>
-   <img width='500' src='https://github.com/user-attachments/assets/c3a31320-b331-4998-b764-f7a9d653c6c5' alt='homepage in lightmode' />
-   <img width='500' src='https://github.com/user-attachments/assets/9d9be0ec-7bd4-4654-a734-e40b8209f706' alt='homepage in darkmode' />
+   <img width='400' src='https://github.com/user-attachments/assets/c3a31320-b331-4998-b764-f7a9d653c6c5' alt='homepage in lightmode' />
+   <img width='400' src='https://github.com/user-attachments/assets/9d9be0ec-7bd4-4654-a734-e40b8209f706' alt='homepage in darkmode' />
 </div>
 
 <h4 align='center'> Language Selection: English & Korean / 언어 선택: 영어 & 한국어 </h4>
@@ -73,8 +73,8 @@
 
 <h4 align='center'>Responsive UI / 반응형 UI</h4>
 <div align='center' style='display:flex'>
-   <img height='700' src='https://github.com/user-attachments/assets/ec8b04d5-a173-472c-b08f-e8d6b7d4ed4e' alt='macbook' />
-   <img height='700' src='https://github.com/user-attachments/assets/2735c300-8a85-4772-b8ee-8b0c42821298' alt='iphone' />
+   <img height='600' src='https://github.com/user-attachments/assets/ec8b04d5-a173-472c-b08f-e8d6b7d4ed4e' alt='macbook' />
+   <img height='600' src='https://github.com/user-attachments/assets/2735c300-8a85-4772-b8ee-8b0c42821298' alt='iphone' />
 </div>
 
 <h4 align='center'>Add to wishlist / 찜 목록에 추가하기</h4>
