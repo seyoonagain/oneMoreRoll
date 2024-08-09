@@ -39,7 +39,7 @@
 ### System Structure
 
 <div align='center'>
-   <img width="700" alt="diagram" src="https://github.com/user-attachments/assets/b3c665a4-b162-48c0-a527-adc9f811d6ab">
+   <img width="700" alt="diagram" src="https://github.com/user-attachments/assets/c83d3abb-b24b-4748-955f-a36ccfd9041a">
 </div>
 
 ---
