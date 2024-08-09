@@ -73,8 +73,8 @@
 
 <h4 align='center'>Responsive UI / 반응형 UI</h4>
 <div align='center' style='display:flex'>
-   <img height='600' src='https://github.com/user-attachments/assets/ec8b04d5-a173-472c-b08f-e8d6b7d4ed4e' alt='macbook' />
-   <img height='600' src='https://github.com/user-attachments/assets/2735c300-8a85-4772-b8ee-8b0c42821298' alt='iphone' />
+   <img height='550' src='https://github.com/user-attachments/assets/ec8b04d5-a173-472c-b08f-e8d6b7d4ed4e' alt='macbook' />
+   <img height='550' src='https://github.com/user-attachments/assets/2735c300-8a85-4772-b8ee-8b0c42821298' alt='iphone' />
 </div>
 
 <h4 align='center'>Add to wishlist / 찜 목록에 추가하기</h4>
