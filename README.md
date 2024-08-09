@@ -36,6 +36,14 @@
 
 ---
 
+### System Structure
+
+<div align='center'>
+   <img width="700" alt="diagram" src="https://github.com/user-attachments/assets/b3c665a4-b162-48c0-a527-adc9f811d6ab">
+</div>
+
+---
+
 ### Appearance
 
 <h4 align='center'> Light Mode & Dark Mode / 라이트 모드 & 다크모드 </h4>
@@ -53,7 +61,10 @@
    <img width='400' src='https://github.com/user-attachments/assets/2f0ded1e-f341-4579-ad7c-726a4776c7e9' alt='films_kr' />
 </div>
 
-<div align='center'>
+<h4 align='center'> Menus Before/After Login </h4>
+<div align='center' style='display:inline'>
+   <img width="250" alt="menus before login" src="https://github.com/user-attachments/assets/cf23682c-cac5-4524-abe0-ce6318088f52">
+   <img width="250" alt="menus after login" src="https://github.com/user-attachments/assets/73f6a40d-be7d-4655-a91b-7b00f7389e1e">
 </div>
 
 ---
