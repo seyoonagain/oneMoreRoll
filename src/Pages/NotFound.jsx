@@ -7,7 +7,7 @@ import { useLanguageContext } from '../Contexts/LanguageContext';
 export default function NotFound() {
     const { engMode } = useLanguageContext();
     return (
-        <div className='p-5 tracking-tight'>
+        <article className='p-5 tracking-tight'>
             <Link to='/'>
                 <button
                     className={`${
@@ -19,6 +19,6 @@ export default function NotFound() {
                 </button>
             </Link>
             <ErrorMessage />
-        </div>
+        </article>
     );
 }

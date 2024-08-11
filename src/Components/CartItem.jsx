@@ -81,10 +81,10 @@ export default function CartItem({
                 <div>
                     <div className='flex flex-col items-center mt-2 mr-5 text-sm'>
                         {engMode ? 'Subtotal' : '합계'}
-                        <span className='font-bold text-base sm:text-lg'>
+                        <p className='font-bold text-base sm:text-lg'>
                             {currencySymbol}
                             {(displayedPrice * qty).toLocaleString()}
-                        </span>
+                        </p>
                     </div>
                     <button
                         onClick={handleDelete}

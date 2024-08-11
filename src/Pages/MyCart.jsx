@@ -41,9 +41,9 @@ export default function MyCart() {
             {isLoading && <LoadingSpinner />}
             {!isLoading && (
                 <>
-                    <p className='pb-5 border-b w-full border-zinc-500 dark:border-gray-200 font-semibold text-xl tracking-tighter text-center mt-5'>
+                    <h2 className='pb-5 border-b w-full border-zinc-500 dark:border-gray-200 font-semibold text-xl tracking-tighter text-center mt-5'>
                         {engMode ? 'My Cart' : '장바구니'}
-                    </p>
+                    </h2>
 
                     {!hasProducts && (
                         <p className='flex justify-center items-center text-center h-60 font-bold text-sun dark:text-moon'>

@@ -121,7 +121,7 @@ export default function ProductDetail() {
         }
     };
     return (
-        <section className='tracking-tight px-5'>
+        <article className='tracking-tight px-5'>
             {isLoading && <LoadingSpinner />}
             {isFetched && (
                 <>
@@ -191,9 +191,9 @@ export default function ProductDetail() {
                                 </div>
                                 <div className='flex justify-between items-center'>
                                     <div className='flex items-center'>
-                                        <span className='font-medium text-sm mr-2'>
+                                        <p className='font-medium text-sm mr-2'>
                                             {engMode ? 'Qty:' : '수량:'}{' '}
-                                        </span>
+                                        </p>
                                         <div className='flex items-center gap-3 bg-gray-200 dark:bg-zinc-800 '>
                                             <button
                                                 onClick={handleLess}
@@ -212,15 +212,15 @@ export default function ProductDetail() {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className='my-5 font-semibold text-lg'>
+                                    <div className='my-5 font-semibold text-lg flex'>
                                         {engMode ? 'Total:' : '합계:'}
                                         {'\xa0\xa0'}
-                                        <span className='font-bold text-2xl'>
+                                        <p className='font-bold text-2xl'>
                                             {currencySymbol}
                                             {(
                                                 displayedPrice * qty
                                             ).toLocaleString()}
-                                        </span>
+                                        </p>
                                     </div>
                                 </div>
                                 <button
@@ -246,6 +246,6 @@ export default function ProductDetail() {
                     </section>
                 </>
             )}
-        </section>
+        </article>
     );
 }

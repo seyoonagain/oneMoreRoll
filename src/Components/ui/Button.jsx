@@ -4,9 +4,9 @@ import { useLanguageContext } from '../../Contexts/LanguageContext';
 export default function Button({ text, icon, onClick }) {
     const { engMode } = useLanguageContext();
     return (
-        <div
+        <button
             onClick={onClick}
-            className={`cursor-pointer flex justify-center items-center 
+            className={`flex justify-center items-center 
                 ${
                     text === 'Films' || text === '필름' || icon
                         ? ` hover:text-sun dark:hover:text-moon hover:scale-110 ${
@@ -24,6 +24,6 @@ export default function Button({ text, icon, onClick }) {
                 }`}
         >
             {text ? text : icon}
-        </div>
+        </button>
     );
 }

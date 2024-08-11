@@ -8,9 +8,9 @@ export default function User({ user: { displayName, photoURL } }) {
                 alt={displayName}
                 src={photoURL}
             />
-            <span className='cursor-default text-sm font-bold hidden sm:block'>
+            <p className='cursor-default text-sm font-bold hidden sm:block'>
                 {displayName}
-            </span>
+            </p>
         </div>
     );
 }
